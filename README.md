@@ -1,0 +1,1 @@
+# Python calculator based on *tkinter* package
