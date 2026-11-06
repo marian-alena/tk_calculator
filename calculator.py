@@ -1,5 +1,6 @@
 import tkinter as tk
 
+
 def evaluate_expression():
     try:
         # Calculate the mathematical string safely
@@ -35,7 +36,12 @@ def button_click(value):
 # Initialize application window
 root = tk.Tk()
 root.title("Tkinter Calculator")
-root.geometry("300x400")
+# Get system DPI via Tkinfo or win32 fallback, or read tk scaling
+tk_scaling = root.tk.call('tk', 'scaling')
+width = 300 * tk_scaling
+height = 400 * tk_scaling
+print("Window width:", width, "Window height:", height)
+root.geometry(f"{int(width)}x{int(height)}")
 
 # Input Display Field
 entry = tk.Entry(root, font=("Arial", 20), justify="right", bd=10)
